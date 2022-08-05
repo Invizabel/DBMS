@@ -1,7 +1,9 @@
 from tkinter import *
 from tkinter import ttk
+from tkinter.ttk import *
 
 import numpy as np
+import os
 import re
 
 #global variables
@@ -10,6 +12,7 @@ global delimiter
 global focus
 global main
 global open_txt_file
+global records
 global tree
 
 main = Tk()
@@ -22,6 +25,7 @@ def engine_txt_file():
     global delimiter
     global main
     global open_txt_file
+    global records
     global tree
 
     my_file = open_txt_file.get()
@@ -45,7 +49,19 @@ def engine_txt_file():
     records.resize(counter, headers)
 
     db(records)
-    
+
+def my_event(event):
+    #global variables
+    global data
+
+    result = data.get()
+
+    if "edit:" in result:
+        edit(event)
+
+    if "filter:" in result:
+        my_filter(event)
+
 def edit(event):
     #global variables
     global data
@@ -53,6 +69,7 @@ def edit(event):
     my_list = []
 
     result = data.get()
+    result = result.replace("edit:", "")
 
     column = tree.identify_column(event.x)
     clean = column.replace("#", "")
@@ -76,6 +93,38 @@ def edit(event):
 
     except IndexError:
         pass
+
+def my_filter(event):
+    #global variables
+    global data
+    global records
+
+    new_records = np.array([])
+
+    result = data.get()
+    result = result.replace("filter:", "")
+    result = result.replace("\n", "")
+
+    counter = 0
+    tracker = 0
+    
+    for i in records:
+        headers = len(i)
+        tracker += 1
+
+        if tracker == 1:
+            new_records = np.append(new_records, i)
+
+        for ii in range(len(i)):
+            i[ii] = i[ii].replace("\n", "")
+
+            if i[ii] == result:
+                counter += 1
+                new_records = np.append(new_records, i)
+
+    new_records.resize(counter + 1, headers)
+
+    db(new_records)
 
 def db(my_array):
     #global variables
@@ -113,7 +162,7 @@ def db(my_array):
 
     tree.pack()
 
-    main.bind("<Button 1>", edit)
+    main.bind("<Button 1>", my_event)
 
     main.mainloop()
 
