@@ -5,14 +5,25 @@ import numpy as np
 import re
 
 #global variables
+global data
 global delimiter
-global label_delimiter
-global label_open_txt_file
+global focus
+global main
 global open_txt_file
-global window_display_txt_file
-global window_open_txt_file
+global tree
+
+main = Tk()
+main.title("DBMS")
 
 def engine_txt_file():
+    #global variables
+    global column
+    global data
+    global delimiter
+    global main
+    global open_txt_file
+    global tree
+
     my_file = open_txt_file.get()
     symbol = delimiter.get()
     
@@ -33,37 +44,58 @@ def engine_txt_file():
 
     records.resize(counter, headers)
 
-    display_txt_file(records)
+    db(records)
+    
+def edit(event):
+    #global variables
+    global data
 
-def database_input():
-    db = np.array([])
-    records = np.array([])
+    my_list = []
 
-    rows = int(input("enter number of rows: "))
-    columns = int(input("enter number of columns: "))
+    result = data.get()
 
-    for i in range(1, columns + 1):
-        column_name = input("enter column name " + str(i) + ": ")
-        db = np.append(db, column_name)
-        records = np.append(records, column_name)
+    column = tree.identify_column(event.x)
+    clean = column.replace("#", "")
+    
+    cursor = tree.focus()
+    cursor_dict = tree.item(cursor)
 
-    for i in range(1, rows + 1):
-        for ii in db:
-            data = input("enter data for " + ii + " (" + str(i) + "): ")
-            records = np.append(records, data)
+    counter = 0
+    for i in cursor_dict["values"]:
+        counter += 1
 
-    records.resize(rows + 1, columns)
+        if counter != int(clean):
+            my_list.append(i)
 
-    return records
+        if counter == int(clean):
+            my_list.append(result)
+            
+    try:
+        edit_entry = tree.selection()[0]
+        tree.item(edit_entry, text = "edit", values = my_list)
 
-def display_txt_file(my_array):
-    window_display_txt_file = Tk()
-    window_display_txt_file.title("DBMS")
+    except IndexError:
+        pass
 
-    window_open_txt_file.destroy()
+def db(my_array):
+    #global variables
+    global data
+    global delimiter
+    global focus
+    global main
+    global open_txt_file
+    global tree
+    
+    #window
+    main.destroy()
+    main = Tk()
+    main.title("DBMS")
+
+    data = Entry(main, width = 40)
+    data.pack()
 
     #start
-    tree = ttk.Treeview(window_display_txt_file, column = my_array[0], show = "headings", height = 25)
+    tree = ttk.Treeview(main, column = my_array[0], show = "headings", height = 25)
 
     tables = -1
 
@@ -80,34 +112,40 @@ def display_txt_file(my_array):
             tree.insert("", "end", text = count, values = tuple(i,))
 
     tree.pack()
-    window_display_txt_file.mainloop()
+
+    main.bind("<Button 1>", edit)
+
+    main.mainloop()
 
 def open_txt_file():
     #global variables
+    global data
     global delimiter
-    global label_delimiter
-    global label_open_txt_file
+    global focus
+    global main
     global open_txt_file
-    global window_display_txt_file
-    global window_open_txt_file
-
-    window_open_txt_file = Tk()
-    window_open_txt_file.title("DBMS")
+    global tree
     
-    label_open_txt_file = Label(window_open_txt_file, text = "open txt file")
+    #window
+    main.destroy()
+    main = Tk()
+    main.title("DBMS")
+
+    #start
+    label_open_txt_file = Label(main, text = "open txt file")
     label_open_txt_file.pack()
 
-    open_txt_file = Entry(window_open_txt_file, width = 40)
+    open_txt_file = Entry(main, width = 40)
     open_txt_file.pack()
 
-    label_delimiter = Label(window_open_txt_file, text = "delimiter")
+    label_delimiter = Label(main, text = "delimiter")
     label_delimiter.pack()
 
-    delimiter = Entry(window_open_txt_file, width = 40)
+    delimiter = Entry(main, width = 40)
     delimiter.pack()
 
-    ttk.Button(window_open_txt_file, text = "ok", width = 20, command = engine_txt_file).pack()
+    ttk.Button(main, text = "ok", width = 20, command = engine_txt_file).pack()
 
-    window_open_txt_file.mainloop()
+    main.mainloop()
 
 open_txt_file()
