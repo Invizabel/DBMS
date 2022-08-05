@@ -4,11 +4,19 @@ from tkinter import ttk
 import numpy as np
 import re
 
-def database_file():
-    records = np.array([])
+#global variables
+global delimiter
+global label_delimiter
+global label_open_txt_file
+global open_txt_file
+global window_display_txt_file
+global window_open_txt_file
 
-    my_file = input("enter name of file: ")
-    symbol = input("enter symbol: ")
+def engine_txt_file():
+    my_file = open_txt_file.get()
+    symbol = delimiter.get()
+    
+    records = np.array([])
 
     headers = 0
     counter = 0
@@ -25,7 +33,7 @@ def database_file():
 
     records.resize(counter, headers)
 
-    return records
+    display_txt_file(records)
 
 def database_input():
     db = np.array([])
@@ -48,11 +56,14 @@ def database_input():
 
     return records
 
-def gui():
-    my_array = database_file()
+def display_txt_file(my_array):
+    window_display_txt_file = Tk()
+    window_display_txt_file.title("DBMS")
 
-    window = Tk()
-    tree = ttk.Treeview(window, column = my_array[0], show = "headings", height = 25)
+    window_open_txt_file.destroy()
+
+    #start
+    tree = ttk.Treeview(window_display_txt_file, column = my_array[0], show = "headings", height = 25)
 
     tables = -1
 
@@ -69,8 +80,34 @@ def gui():
             tree.insert("", "end", text = count, values = tuple(i,))
 
     tree.pack()
+    window_display_txt_file.mainloop()
 
-    window.mainloop()
+def open_txt_file():
+    #global variables
+    global delimiter
+    global label_delimiter
+    global label_open_txt_file
+    global open_txt_file
+    global window_display_txt_file
+    global window_open_txt_file
 
-#print(database_file())
-gui()
+    window_open_txt_file = Tk()
+    window_open_txt_file.title("DBMS")
+    
+    label_open_txt_file = Label(window_open_txt_file, text = "open txt file")
+    label_open_txt_file.pack()
+
+    open_txt_file = Entry(window_open_txt_file, width = 40)
+    open_txt_file.pack()
+
+    label_delimiter = Label(window_open_txt_file, text = "delimiter")
+    label_delimiter.pack()
+
+    delimiter = Entry(window_open_txt_file, width = 40)
+    delimiter.pack()
+
+    ttk.Button(window_open_txt_file, text = "ok", width = 20, command = engine_txt_file).pack()
+
+    window_open_txt_file.mainloop()
+
+open_txt_file()
