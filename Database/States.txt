@@ -1,0 +1,51 @@
+State"Postal Code"Flower"Tree"Bird
+Alabama"AL"Camellia/Oak-Leaf Hydrangea"Longleaf Pine"Northern flicker
+Alaska"AK"Forget-Me-Not"Sitka Spruce"Willow Ptarmigan
+Arizona"AZ"Saguaro Cactus Blossom"Blue Palo Verde"Cactus Wren
+Arkansas"AR"Apple Blossom"Pine"Northern mockingbird
+California"CA"California Poppy"Coast Redwood/Giant Sequoia"California Quail
+Colorado"CO"Rocky Mountain Columbine"Colorado Blue Spruce"Lark Bunting
+Connecticut"CT"Mountain Laurel/Michaela Petits/Four-O Clocks"White Oak"American Robin
+Delaware"DE"Peach Blossom"American Holly"Delaware Blue Hen
+Florida"FL"Orange Blossom/Tickseed"Sabal Palm"Northern Mockingbird
+Georgia"GA"Azalea/Cherokee Rose"Southern Live Oak"Brown Thrasher
+Hawaii"HI"Hawaiian Hibiscus"Candlenut Tree"Hawaiian Goose
+Idaho"ID"Syringa, MockOrange"Western White Pine"Mountain Bluebird
+Illinois"IL"Violet/Milkweed"White Oak"Northern Cardinal
+Indiana"IN"Peony"Tulip Tree"Northern Cardinal
+Iowa"IA"Wild Rose"Bur Oak"American Goldfinch
+Kansas"KS"Sunflower"Eastern Cottonwood"Western Meadowlark
+Kentucky"KY"Goldenrod"Tulip-Tree"Northern Cardinal
+Louisiana"LA"Magnolia/Louisiana Iris"Bald Cypress"Brown Pelican
+Maine"ME"White Pine Cone And Tassel"Eastern White Pine"Chickadee
+Maryland"MD"Black-Eyed Susan"White Oak"Baltimore Oriole
+Massachusetts"MA"Mayflower"American Elm"Black-Capped Chickadee
+Michigan"MI"Apple Blossom/Dwarf Lake Iris"Eastern White Pine"American Robin
+Minnesota"MN"Pink And White Ladys Slipper"Red Pine"Common Loon
+Mississippi"MS"Magnolia/Tickseed"Southern Magnolia"Northern Mockingbird
+Missouri"MO"Hawthorn"Flowering Dogwood"Eastern Bluebird
+Montana"MT"Bitterroot"Ponderosa Pine"Western Meadowlark
+Nebraska"NE"Goldenrod"Eastern Cottonwood"Western Meadowlark
+Nevada"NV"Sagebrush"Single-leaf Pinyon/Bristlecone Pine"Mountain Bluebird
+New Hampshire"NH"Purple Lilac/Pinkladys Slipper"American White Birch"Purple Finch
+New Jersey"NJ"Violet"Northern Red Oak"American Goldfinch
+New Mexico"NM"Yucca Flower"Piñon Pine"Greater Roadrunner
+New York"NY"Rose"Sugar Maple"Eastern Bluebird
+North Carolina"NC"Flowering Dogwood/Carolina Lily"Pine"Northern Cardinal
+North Dakota"ND"Wild Prairie Rose"American Elm"Western Meadowlark
+Ohio"OH"Flores Mayo/Scarlet Carnation/Large White Trillium"Ohio Buckeye"Northern Cardinal
+Oklahoma"OK"Oklahoma Rose/Indian Blanket/Mistletoe"Eastern Redbud"Scissor-Tailed Flycatcher
+Oregon"OR"Oregon Grape"Douglas-Fir"Western Meadowlark
+Pennsylvania"PA"Mountain Laurel/Penngift Crown Vetch"Eastern Hemlock"Ruffed Grouse
+Rhode Island"RI"Violet"Red Maple"Rhode Island Red
+South Carolina"SC"Yellow Jessamine/Goldenrod"Sabal Palm"Carolina Wren
+South Dakota"SD"Pasque Flower"Black Hills Spruce"Ring-Necked Pheasant
+Tennessee"TN"Iris/Purple Passionflower/Tennessee Purple Coneflower"Tulip-Tree"Northern Mockingbird
+Texas"TX"Bluebonnet"Pecan"Northern Mockingbird
+Utah"UT"Sego Lily"Blue Spruce"California gull
+Vermont"VT"Red Clover"Sugar Maple"Hermit thrush
+Virginia"VA"American Dogwood"Flowering Dogwood"Northern Cardinal
+Washington"WA"Coast Rhododendron"Western Hemlock"American Goldfinch
+West Virginia"WV"Rhododendron"Sugar Maple"Northern Cardinal
+Wisconsin"WI"Wood Violet"Sugar Maple"American Robin
+Wyoming"WY"Indian Paintbrush"Plains Cottonwood"Western Meadowlark
