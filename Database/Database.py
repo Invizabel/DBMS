@@ -4,6 +4,7 @@ from tkinter.ttk import *
 
 import numpy as np
 import os
+import pandas as pd
 import re
 
 #global variables
@@ -118,7 +119,7 @@ def my_filter(event):
         for ii in range(len(i)):
             i[ii] = i[ii].replace("\n", "")
 
-            if i[ii] == result:
+            if result.lower() in i[ii].lower():
                 counter += 1
                 new_records = np.append(new_records, i)
 
